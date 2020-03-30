@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+        {% for job in jobs %}
+        <div class="table_container">
+            <table class="my_table">
+                <tr class="my_row">
+                    <td class="title" width="200px" bgcolor="#dddddd">Номер занятия</td>
+                    <td class="title" width="500px" bgcolor="#dddddd">Ссылка на задания</td>
+                    <td class="title" width="500px" bgcolor="#dddddd">Ссылка на гуглформу</td>
+                </tr>
+                <tr class="my_row">
+                    <td class="ordinary" bgcolor="#eeeeff">{{ job.job}}</td>
+                    <td class="ordinary" bgcolor="#eeeeff">{{ job.job_link}}</td>
+                    <td class="ordinary" bgcolor="#eeeeff">{{ job.link_to_google_form}}</td>
+                </tr>
+
+            </table>
+        </div>
+        <br>
+{% endfor %}
+{% endblock %}

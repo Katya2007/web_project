@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+        {% for new in news %}
+        <div class="table_container">
+            <table class="my_table">
+                <tr class="my_row">
+                    <td class="title" width="200px" bgcolor="#dddddd">Фамилия</td>
+                    <td class="title" width="150px" bgcolor="#dddddd">Имя</td>
+                    <td class="title" width="100px" bgcolor="#dddddd" align="center">Почтовый адрес</td>
+                    <td class="title" width="200px" bgcolor="#dddddd" align="center">Телефон</td>
+                </tr>
+                <tr class="my_row">
+                    <td class="ordinary" bgcolor="#eeeeff">{{ new.surname}}</td>
+                    <td class="ordinary" bgcolor="#eeeeff">{{ new.name}}</td>
+                    <td class="ordinary" bgcolor="#eeeeff" align="center">{{ new.email}}</td>
+                    <td class="ordinary" bgcolor="#eeeeff" align="center">{{ new.telephone}}</td>
+                </tr>
+
+            </table>
+        </div>
+        <br>
+{% endfor %}
+{% endblock %}

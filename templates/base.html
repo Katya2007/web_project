@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <title>{{title}}</title>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;"><h1> Курс "Занимательная математика"</h1>
+	{% if current_user.is_authenticated %}
+    <h1>{{ current_user.surname }}</h1>
+    <a class="navbar-brand" href="/logout">Выйти</a>
+    {% if b %}
+    </nav>
+    <h3>Вы уже получили ссылки на задания и гуглформы</h3>
+    <h3>Если Вы хотите повторно получить ссылки, нажмите Выйти и авторизируйтесь ещё раз.</h3>
+    {% endif %}
+    {% else %}
+    <p>
+        <a class="navbar navbar-darblue bg-light" href="/register">Регистрация ученика</a>
+	<a class="navbar navbar-dark bg-light" href="/vivod">Вывести список зарегистрированных учеников</a>
+        <a class="navbar navbar-dark bg-light" href="/login">Авторизация ученика</a>
+    </p>
+    </nav>
+
+{% if not a %}    
+<h4>Для регистрации ученика нажмите "Регистрация ученика"</h4>
+<h4>Для вывода списка зарегистрированных учеников нажмите "Вывод списка зарегистрированных учеников"</h4>
+<h4>Для авторизации ученика нажмите "Авторизация ученика"</h4>
+{% endif %}
+{% endif %}
+</header>
+<!-- Begin page content -->
+<main role="main" class="container">
+    {% block content %}{% endblock %}
+</main>
+</body>
+</html>
