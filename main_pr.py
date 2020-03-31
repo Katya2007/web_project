@@ -1,4 +1,4 @@
-from flask_ngrok import run_with_ngrok
+#from flask_ngrok import run_with_ngrok
 from flask_login import login_user, LoginManager, logout_user
 from data.register import RegisterForm
 from flask import Flask, render_template, redirect
@@ -8,7 +8,7 @@ from data.jobs import Jobs
 from data.login import LoginForm
 
 app = Flask(__name__)
-run_with_ngrok(app)
+#run_with_ngrok(app)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
 login_manager = LoginManager()
@@ -76,10 +76,9 @@ def main():
                                    form=form)
         return render_template('login.html', a = True, b = False, title='Авторизация ученика', form=form)    
     
-    #app.run(port=8050, host='127.0.0.1')
+    app.run(port=8050, host='127.0.0.1')
 
-    app.run()
-
+    #app.run()
 if __name__ == '__main__':
     main()
     
